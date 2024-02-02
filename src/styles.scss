@@ -1,6 +1,8 @@
 @use './config-scss/variables.scss';
 @use './config-scss/reset.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@100;400;700&display=swap');
+
 html {
     background-color: var(--primary-color);
     color: white;
@@ -8,6 +10,12 @@ html {
 }
 
 main {
-    width: 37.5rem;
+    max-width: 37.5rem;
+    padding: 0 1.25rem;
     margin: 0 auto;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }

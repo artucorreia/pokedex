@@ -1,0 +1,32 @@
+@import '../../../config-scss/variables.scss';
+
+:host {
+    form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: var(--serach-color);
+        padding: 0.938rem 1.25rem;    
+
+        border-radius: 0.625rem;
+        
+        & > input {
+            background-color: var(--serach-color);
+            color: var(--white);
+
+            border: none;
+            outline: none;
+        
+            font-size: 1.125em;
+            font-weight: 100;
+
+            width: 95%;
+
+            &::placeholder {
+                color: var(--white);
+            }
+        }
+    
+    }
+}
