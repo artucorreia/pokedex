@@ -1,0 +1,70 @@
+@import '../../../config-scss/variables.scss';
+
+
+// 605px quebra a tela
+:host {
+    .container {
+        padding: 1.25rem 0;
+        display: flex;
+
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+    }
+    
+    .card {
+        display: flex;
+        justify-content: space-between;
+
+        width: 14.649rem;
+        min-height: 10rem;
+        height: 7.313rem;
+
+        margin-bottom: 0.625rem;
+        padding: 1.25rem;
+
+        border-radius: 0.625rem;
+
+        background-color: var(--white);
+    }
+
+    .pokemon__info {
+        color: var(--primary-color);
+
+        & > .pokemon__name {
+            font-size: 1.3em;
+            font-weight: 700;
+            font-style: italic;
+
+            padding: 0 0 0.625rem 0;
+        }
+
+        & .pokemon__type {
+            width: 3.44rem;
+            padding: 0.125rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.313rem;
+
+            text-align: center;
+            font-weight: 400;
+            font-size: 0.8em;
+
+            background-color: var(--gray);
+        }
+    }
+
+    .pokemon__container {
+        position: relative;
+
+        background: url('../../../assets/bg-pokemon.svg');
+        background-position: center;
+        background-repeat: no-repeat;        
+        
+        width: 110px;
+        
+        .pokemon {
+            position: absolute;
+            transform: translate(0.875rem, 1.938rem);
+        }
+    }
+}

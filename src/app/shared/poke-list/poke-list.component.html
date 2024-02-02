@@ -1,1 +1,14 @@
-<p>poke-list works!</p>
+<section class="container">
+    <a routerLink="#" class="card" *ngFor="let num of array">
+        <article class="pokemon__info">
+            <h2 class="pokemon__name">Bulbasaur</h2>
+            <ul>
+                <li class="pokemon__type">grass</li>
+                <li class="pokemon__type">poison</li>
+            </ul>
+        </article>
+        <article class="pokemon__container">
+            <img src="../../../assets/img.png" alt="Pokemon Imagem" class="pokemon">
+        </article>
+    </a>
+</section>

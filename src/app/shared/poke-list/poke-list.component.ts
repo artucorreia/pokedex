@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./poke-list.component.scss']
 })
 export class PokeListComponent {
-
+  public array: number[] = [1,2,3,4,5,6,6,6,6,6,6,6,6,6,6];
 }
