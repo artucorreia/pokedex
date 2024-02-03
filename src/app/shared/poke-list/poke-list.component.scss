@@ -1,7 +1,6 @@
 @import '../../../config-scss/variables.scss';
 
 
-// 605px quebra a tela
 :host {
     .container {
         padding: 1.25rem 0;
@@ -16,8 +15,7 @@
         display: flex;
         justify-content: space-between;
 
-        width: 14.649rem;
-        min-height: 10rem;
+        width: calc(49% - 2.4rem);
         height: 7.313rem;
 
         margin-bottom: 0.625rem;
@@ -60,11 +58,34 @@
         background-position: center;
         background-repeat: no-repeat;        
         
-        width: 110px;
+        width: 6.875rem; 
         
         .pokemon {
             position: absolute;
             transform: translate(0.875rem, 1.938rem);
+        }
+    }
+}
+
+
+@media (max-width: 550px) {
+    .container {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    
+        & > .card {
+            width: calc(100% - 2.108rem);
+            padding: 1.25rem 2.108rem;
+        }
+    }
+}
+
+
+@media (max-width: 400px) {
+    .container {
+        & > .card {
+            width: 100%;
+            padding: 1.25rem;
         }
     }
 }
