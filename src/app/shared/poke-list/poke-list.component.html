@@ -1,7 +1,7 @@
 <section class="container">
-    <a routerLink="#" class="card" *ngFor="let num of array">
+    <a routerLink="#" class="card" *ngFor="let pokemon of allPokemons">
         <article class="pokemon__info">
-            <h2 class="pokemon__name">Bulbasaur</h2>
+            <h2 class="pokemon__name">{{ pokemon.name }}</h2>
             <ul>
                 <li class="pokemon__type">grass</li>
                 <li class="pokemon__type">poison</li>
