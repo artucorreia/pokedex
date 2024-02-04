@@ -3,12 +3,12 @@
         <article class="pokemon__info">
             <h2 class="pokemon__name">{{ pokemon.name }}</h2>
             <ul>
-                <li class="pokemon__type">grass</li>
-                <li class="pokemon__type">poison</li>
+                <li class="pokemon__type" 
+                *ngFor="let types of pokemon.status.types">{{ types.type.name }}</li>
             </ul>
         </article>
         <article class="pokemon__container">
-            <img src="../../../assets/img.png" alt="Pokemon Imagem" class="pokemon">
+            <img src="{{ pokemon.status.sprites.other.dream_world.front_default }}" alt="Pokemon Imagem" class="pokemon__img">
         </article>
     </a>
 </section>
