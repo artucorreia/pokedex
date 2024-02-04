@@ -7,8 +7,6 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
   styleUrls: ['./poke-list.component.scss']
 })
 export class PokeListComponent {
-  // public array: number[] = [1,2,3,4,5];
-
   public allPokemons: any = [];
 
   constructor(private pokeApiService: PokeApiService) { }
