@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 // Pages
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -21,7 +22,8 @@ import { DetailsComponent } from './details/details.component';
   imports: [
     CommonModule,
     RoutingModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class PagesModule { }

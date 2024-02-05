@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
@@ -10,12 +9,14 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 export class PokeListComponent {
   public allPokemons: any = [];
 
+  public url: string = '/details'
+
   constructor(private pokeApiService: PokeApiService) { }
 
   ngOnInit(): void {
     this.pokeApiService.listAllPoemons.subscribe({
       next: allPokemons => {
-        this.allPokemons = allPokemons.results
+        this.allPokemons = allPokemons.results;
       },
       error: error => console.log(error)
     });

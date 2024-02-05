@@ -1,9 +1,9 @@
 <section class="container">
     <ng-template ngFor let-pokemon [ngForOf]="allPokemons">
-        <a routerLink="/details" class="card">
+        <a [routerLink]="['details', pokemon.status.id]" class="card" *ngIf="pokemon.status">
             <article class="pokemon__info">
                 <h2 class="pokemon__name">{{ pokemon.name }}</h2>
-                <ul *ngIf="pokemon.status">
+                <ul>
                     <li class="pokemon__type" 
                     *ngFor="let types of pokemon.status.types">{{ types.type.name }}</li>
                 </ul>
@@ -11,8 +11,7 @@
             <article class="pokemon__container">
                 <img 
                 [src]="pokemon.status.sprites.other.dream_world.front_default" 
-                [alt]="pokemon.name" class="pokemon__img"
-                *ngIf="pokemon.status">
+                [alt]="pokemon.name" class="pokemon__img">
             </article>
         </a>
     </ng-template>
