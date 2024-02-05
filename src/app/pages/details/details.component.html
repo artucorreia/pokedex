@@ -1,32 +1,52 @@
 <app-poke-header></app-poke-header>
 
-<main>
+<main *ngIf="selectedPokemon">
     <section class="pokemon__name">
-        <h2>pokemon</h2>
+        <h2>{{selectedPokemon.name}}</h2>
     </section>
     <section class="container">
-        <img src="../../../assets/img.png" class="pokemon__img">
+        <img [src]="selectedPokemon.sprites.other.dream_world.front_default" 
+        [alt]="selectedPokemon.name" 
+        class="pokemon__img">
         <article class="card">
             <div class="pokemon__info">
                 <h2 class="title">estatísticas</h2>
                 <ul>
                     <li class="stats">
-                        hp <strong>xx</strong>
+                        hp 
+                        <strong>
+                            {{selectedPokemon.stats[0].base_stat}}
+                        </strong>
                     </li>
                     <li class="stats">
-                        attack <strong>xx</strong>
+                        attack 
+                        <strong>
+                            {{selectedPokemon.stats[1].base_stat}}
+                        </strong>
                     </li>
                     <li class="stats">
-                        defense <strong>xx</strong>
+                        defense 
+                        <strong>
+                            {{selectedPokemon.stats[2].base_stat}}
+                        </strong>
                     </li>
                     <li class="stats">
-                        special attack <strong>xx</strong>
+                        special attack 
+                        <strong>
+                            {{selectedPokemon.stats[3].base_stat}}
+                        </strong>
                     </li>
                     <li class="stats">
-                        special defense <strong>xx</strong>
+                        special defense 
+                        <strong>
+                            {{selectedPokemon.stats[4].base_stat}}
+                        </strong>
                     </li>
                     <li class="stats">
-                        speed <strong>xx</strong>
+                        speed 
+                        <strong>
+                            {{selectedPokemon.stats[5].base_stat}}
+                        </strong>
                     </li>
                 </ul>
                 <button class="button" routerLink="/">voltar</button>
