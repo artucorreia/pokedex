@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '', loadChildren: () => import('../app/pages/pages.module').then(p => p.PagesModule)
+  },
+  {
+    path: 'details/:id', loadChildren: () => import('../app/pages/pages.module').then(p => p.PagesModule)
   }
 ];
 

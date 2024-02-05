@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
