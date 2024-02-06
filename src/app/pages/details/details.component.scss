@@ -1,34 +1,54 @@
 @import url('../../../config-scss/variables.scss');
 
- // & > .pokemon__img {
-        //     position: absolute;
-        //     top: 107px;
-        //     left: 80px;
-        // }
-
 :host {
-    .pokemon__name {
-        font-size: 2em;
-        font-weight: 400;
-        text-transform: capitalize;
+    main {
+        padding-top: 2.813rem;
+    }
 
-        text-align: end;
-        padding: 0 30px 10px 0;
+    .pokemon__name {
+        padding: 0 1.875rem 0.5rem 0;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        
+        & > h1 {
+            font-size: 2em;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+
+        & > h2 {
+            position: absolute;
+            top: 8.2rem;
+            font-weight: 100;
+            font-size: 3.75em;
+
+            color: var(--japanese-name);
+        }
+    
+    }
+
+    .container {
+        position: relative;
     }
 
     .pokemon__img {
         max-width: 8.125rem;
+        position: absolute;
+        top: -6.25rem;
+        left: 3.125rem;
     }
 
     .card {
         background-color: var(--white);
         color: black;
-        height: 72vh;
+        // height: 72vh;
 
         border-radius: 3rem;
 
         & > .pokemon__info {
-            padding: 60px 40px 20px 40px;
+            padding: 4.063rem 2.5rem 3rem 2.5rem;
     
             & > .title {
                 color: var(--secondary-color);
@@ -60,10 +80,9 @@
                 text-transform: capitalize;
     
                 border-radius: 0.7rem;
-    
-    
-                margin-top: 40px;            
-                padding: 20px calc(53% - 32.609px);
+
+                margin: 2.5rem auto 0 auto;
+                padding: 1.25rem calc(53% - 2.038rem);
     
                 border: none;
                 outline: none;
@@ -76,5 +95,55 @@
        
     }
 
+    @media (max-width: 550px) {
+        .pokemon__name {
+            & > h1 {
+                font-size: 1.6em;
+            }
     
+            & > h2 {
+                top: 9rem;
+                font-size: 2.75em;
+            }
+        }
+
+        .pokemon__img {
+            max-width: 6.5rem;
+            top: -5.25rem;
+        }
+
+        .card {
+
+            & > .pokemon__info {
+                padding: 2.5rem 2.5rem 3rem 2.5rem;
+            }
+        }
+    }
+
+
+    @media (max-width: 450px) {
+        .pokemon__name {
+            align-items: end;
+            & > h1 {
+                font-size: 1.4em;
+            }
+    
+            & > h2 {
+                top: 9.3rem;
+                font-size: 2em;
+            }
+        }
+
+        .pokemon__img {
+            max-width: 5.8rem;
+            top: -4.3rem;
+            left: 1rem;
+        }
+
+        .card {
+            & .title {
+                font-size: 1.5em;
+            }
+        }
+    }
 }

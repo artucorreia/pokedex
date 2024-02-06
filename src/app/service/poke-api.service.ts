@@ -31,8 +31,8 @@ export class PokeApiService {
     )
   }
 
-  public getPokemon(pokemonId: string): Observable<any> {
-    return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).pipe(
+  public getInfoPokemon(url: string): Observable<any> {
+    return this.http.get<any>(`https://pokeapi.co/api/v2/${url}`).pipe(
       res => res,
       error => error
     )

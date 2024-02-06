@@ -1,12 +1,13 @@
 <app-poke-header></app-poke-header>
 
-<main *ngIf="selectedPokemon">
+<main *ngIf="pokemon[0] && pokemon[1]">
     <section class="pokemon__name">
-        <h2>{{selectedPokemon.name}}</h2>
+        <h1>{{ pokemon[0].name }}</h1>
+        <h2>{{ pokemon[1].names[0].name }}</h2>
     </section>
     <section class="container">
-        <img [src]="selectedPokemon.sprites.other.dream_world.front_default" 
-        [alt]="selectedPokemon.name" 
+        <img [src]="pokemon[0].sprites.other.dream_world.front_default" 
+        [alt]="pokemon[0].name" 
         class="pokemon__img">
         <article class="card">
             <div class="pokemon__info">
@@ -15,37 +16,37 @@
                     <li class="stats">
                         hp 
                         <strong>
-                            {{selectedPokemon.stats[0].base_stat}}
+                            {{pokemon[0].stats[0].base_stat}}
                         </strong>
                     </li>
                     <li class="stats">
                         attack 
                         <strong>
-                            {{selectedPokemon.stats[1].base_stat}}
+                            {{pokemon[0].stats[1].base_stat}}
                         </strong>
                     </li>
                     <li class="stats">
                         defense 
                         <strong>
-                            {{selectedPokemon.stats[2].base_stat}}
+                            {{pokemon[0].stats[2].base_stat}}
                         </strong>
                     </li>
                     <li class="stats">
                         special attack 
                         <strong>
-                            {{selectedPokemon.stats[3].base_stat}}
+                            {{pokemon[0].stats[3].base_stat}}
                         </strong>
                     </li>
                     <li class="stats">
                         special defense 
                         <strong>
-                            {{selectedPokemon.stats[4].base_stat}}
+                            {{pokemon[0].stats[4].base_stat}}
                         </strong>
                     </li>
                     <li class="stats">
                         speed 
                         <strong>
-                            {{selectedPokemon.stats[5].base_stat}}
+                            {{pokemon[0].stats[5].base_stat}}
                         </strong>
                     </li>
                 </ul>

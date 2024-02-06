@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 // Activated Route
 import { ActivatedRoute } from '@angular/router';
 
+// ForKJoin
+import { forkJoin } from 'rxjs';
+
 // Service
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
@@ -14,7 +17,7 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 export class DetailsComponent {
   
   public urlParamsId: string = '';
-  public selectedPokemon: any = '';
+  public pokemon: any = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,7 +26,7 @@ export class DetailsComponent {
 
   ngOnInit() {
     this.UrlParams;
-    this.Pokemon;
+    this.InfoPokemon;
   }
 
   get UrlParams() {
@@ -32,12 +35,12 @@ export class DetailsComponent {
     })
   }
 
-  get Pokemon() {
-    return this.pokeApiService.getPokemon(this.urlParamsId).subscribe({
-      next: res => {
-        this.selectedPokemon = res
-      },
-      error: error => error
-    });
+  get InfoPokemon() {
+    const pokemon = this.pokeApiService.getInfoPokemon(`pokemon/${this.urlParamsId}`);
+    const name = this.pokeApiService.getInfoPokemon(`pokemon-species/${this.urlParamsId}`);
+    
+    return forkJoin([pokemon, name]).subscribe(
+      res => this.pokemon = res
+    ); 
   }
 }
