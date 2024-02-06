@@ -8,6 +8,7 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class PokeListComponent {
   public allPokemons: any = [];
+  public getAllPokemons: any = [];
 
   public url: string = '/details'
 
@@ -17,8 +18,19 @@ export class PokeListComponent {
     this.pokeApiService.listAllPoemons.subscribe({
       next: allPokemons => {
         this.allPokemons = allPokemons.results;
+        this.getAllPokemons = this.allPokemons;
       },
       error: error => console.log(error)
+    });
+  }
+
+  public searchName(pokemonName: string): any {
+    return this.getAllPokemons = this.allPokemons.filter( ( element: any ) => {
+      if
+      (element.name.indexOf(pokemonName.toLowerCase()) != -1) {
+        return true;
+      }
+      return false;
     });
   }
 }

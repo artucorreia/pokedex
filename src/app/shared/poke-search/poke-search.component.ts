@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-poke-search',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./poke-search.component.scss']
 })
 export class PokeSearchComponent {
+  
+  @Output() public sharedName = new EventEmitter<string>();
 
+  constructor() { }
+
+  public getName(inputValue: string) {
+    this.sharedName.emit(inputValue);    
+  }
 }

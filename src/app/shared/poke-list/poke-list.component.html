@@ -1,5 +1,7 @@
+<app-poke-search (sharedName)="searchName($event)"></app-poke-search>
+
 <section class="container">
-    <ng-template ngFor let-pokemon [ngForOf]="allPokemons">
+    <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
         <a [routerLink]="['details', pokemon.status.id]" class="card" *ngIf="pokemon.status">
             <article class="pokemon__info">
                 <h2 class="pokemon__name">{{ pokemon.name }}</h2>
