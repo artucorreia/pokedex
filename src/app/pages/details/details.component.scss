@@ -38,12 +38,13 @@
         position: absolute;
         top: -6.25rem;
         left: 3.125rem;
+
+        z-index: 10;
     }
 
     .card {
         background-color: var(--white);
         color: black;
-        // height: 72vh;
 
         border-radius: 3rem;
 
@@ -126,7 +127,6 @@
         }
 
         .card {
-
             & > .pokemon__info {
                 padding: 4.9rem 2.5rem 3rem 2.5rem;
             }

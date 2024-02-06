@@ -2,14 +2,14 @@
 
 <main *ngIf="!apiError && pokemon[0] && pokemon[1]">
     <section class="pokemon__name">
-        <h1>{{ pokemon[0].name }}</h1>
-        <h2>{{ pokemon[1].names[0].name }}</h2>
+        <h1 class="slideInLeft">{{ pokemon[0].name }}</h1>
+        <h2 class="slideInRight">{{ pokemon[1].names[0].name }}</h2>
     </section>
     <section class="container">
         <img [src]="pokemon[0].sprites.other.dream_world.front_default" 
         [alt]="pokemon[0].name" 
-        class="pokemon__img">
-        <article class="card">
+        class="pokemon__img slideInDown">
+        <article class="card fadeIn">
             <div class="pokemon__info">
                 <h2 class="title">estatísticas</h2>
                 <ul>

@@ -1,5 +1,6 @@
-@use './config-scss/variables.scss';
-@use './config-scss/reset.scss';
+@import './config-scss/variables.scss';
+@import './config-scss/reset.scss';
+@import './config-scss/animations.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@100;400;700&display=swap');
 
