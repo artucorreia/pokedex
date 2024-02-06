@@ -26,17 +26,17 @@ export class DetailsComponent {
   ) { }
 
   ngOnInit() {
-    this.UrlParams;
-    this.InfoPokemon;
+    this.UrlParams()
+    this.InfoPokemon();
   }
 
-  get UrlParams() {
+  public UrlParams() {
     return this.activatedRoute.params.subscribe({
       next: res => this.urlParamsId = res['id']
     })
   }
 
-  get InfoPokemon() {
+  public InfoPokemon() {
     const pokemon = this.pokeApiService.getInfoPokemon(`pokemon/${this.urlParamsId}`);
     const name = this.pokeApiService.getInfoPokemon(`pokemon-species/${this.urlParamsId}`);
     
