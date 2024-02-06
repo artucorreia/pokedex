@@ -18,6 +18,7 @@ export class DetailsComponent {
   
   public urlParamsId: string = '';
   public pokemon: any = [];
+  public apiError: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -39,8 +40,9 @@ export class DetailsComponent {
     const pokemon = this.pokeApiService.getInfoPokemon(`pokemon/${this.urlParamsId}`);
     const name = this.pokeApiService.getInfoPokemon(`pokemon-species/${this.urlParamsId}`);
     
-    return forkJoin([pokemon, name]).subscribe(
-      res => this.pokemon = res
-    ); 
+    return forkJoin([pokemon, name]).subscribe({
+      next: res => this.pokemon = res,
+      error: () => this.apiError = true
+    }); 
   }
 }

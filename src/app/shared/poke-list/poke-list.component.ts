@@ -10,7 +10,7 @@ export class PokeListComponent {
   public allPokemons: any = [];
   public getAllPokemons: any = [];
 
-  public url: string = '/details'
+  public apiError: boolean = false;
 
   constructor(private pokeApiService: PokeApiService) { }
 
@@ -20,7 +20,7 @@ export class PokeListComponent {
         this.allPokemons = allPokemons.results;
         this.getAllPokemons = this.allPokemons;
       },
-      error: error => console.log(error)
+      error: () => this.apiError = true
     });
   }
 

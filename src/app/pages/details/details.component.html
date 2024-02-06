@@ -1,6 +1,6 @@
 <app-poke-header></app-poke-header>
 
-<main *ngIf="pokemon[0] && pokemon[1]">
+<main *ngIf="!apiError && pokemon[0] && pokemon[1]">
     <section class="pokemon__name">
         <h1>{{ pokemon[0].name }}</h1>
         <h2>{{ pokemon[1].names[0].name }}</h2>
@@ -55,3 +55,7 @@
         </article>
     </section>
 </main>
+
+<!-- img error -->
+<img src="../../../assets/error.png" 
+alt="Erro API" class="error__img" *ngIf="apiError">
