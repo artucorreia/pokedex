@@ -19,6 +19,7 @@ export class PokeListComponent {
       next: allPokemons => {
         this.allPokemons = allPokemons.results;
         this.getAllPokemons = this.allPokemons;
+        console.log(this.allPokemons);
       },
       error: () => this.apiError = true
     });
@@ -33,4 +34,14 @@ export class PokeListComponent {
       return false;
     });
   }
+
+  // public searchTypes(pokemonName: string): any {
+  //   return this.getAllPokemons = this.allPokemons.filter( ( element: any ) => {
+  //     if
+  //     (element.status.types.type.name == pokemonName) {
+  //       return true;
+  //     }
+  //     return false;
+  //   });
+  // }
 }

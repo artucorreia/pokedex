@@ -49,6 +49,19 @@
                             {{pokemon[0].stats[5].base_stat}}
                         </strong>
                     </li>
+                    <li class="stats">
+                        total 
+                        <strong>
+                            {{ 
+                                pokemon[0].stats[0].base_stat + 
+                                pokemon[0].stats[1].base_stat + 
+                                pokemon[0].stats[2].base_stat + 
+                                pokemon[0].stats[3].base_stat + 
+                                pokemon[0].stats[4].base_stat + 
+                                pokemon[0].stats[5].base_stat
+                            }}
+                        </strong>
+                    </li>
                 </ul>
                 <button class="button" routerLink="/">voltar</button>
             </div>

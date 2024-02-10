@@ -1,5 +1,14 @@
 <form>
-    <input type="text" #input (keyup)="getName(input.value)" 
-    placeholder="Buscar Pokemon..." maxlength="45">
-    <img src="assets/search.svg" alt="Buscar Pokemon">
+    <section class="search__container">
+        <input type="text" #input (keyup)="getName(input.value)"
+        placeholder="Buscar Pokemon..." maxlength="30">
+        <img src="assets/search.svg" alt="Buscar Pokemon">
+    </section>
+
+    <section>
+        <select name="types" class="select">
+            <option value="">Filtrar</option>
+            <option *ngFor="let type of typeList" [value]="type">{{ type }}</option>
+        </select>
+    </section>
 </form>
