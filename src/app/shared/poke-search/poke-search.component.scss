@@ -2,10 +2,14 @@
 
 :host {
     .search__container {
-        background-color: var(--serach-color);
-        padding: 0.9rem 0.65rem;    
+        display: flex;
+        justify-content: left;
+        align-items: center;
 
-        width: calc(100% - 1.4rem);
+        background-color: var(--serach-color);
+        
+        padding: 0.9rem 0.8rem;    
+        margin: auto;
 
         border-radius: 0.625rem;
 
