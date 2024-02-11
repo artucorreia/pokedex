@@ -15,7 +15,7 @@ export class PokeSearchComponent {
     'Normal', 
     'Fire', 
     'Water', 
-    'Eletric', 
+    'Electric', 
     'Grass', 
     'Ice', 
     'Fighting', 
@@ -27,7 +27,6 @@ export class PokeSearchComponent {
     'Rock', 
     'Ghost', 
     'Dragon', 
-    'Dark', 
     'Steel', 
     'Fairy'
   ]

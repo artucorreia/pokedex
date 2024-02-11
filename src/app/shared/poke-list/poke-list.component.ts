@@ -26,11 +26,7 @@ export class PokeListComponent {
 
   public searchName(pokemonName: string): any {
     return this.getAllPokemons = this.allPokemons.filter( ( element: any ) => {
-      if
-      (element.name.indexOf(pokemonName.toLowerCase()) != -1) {
-        return true;
-      }
-      return false;
+      return element.name.indexOf(pokemonName.toLowerCase()) != -1; 
     });
   }
 
