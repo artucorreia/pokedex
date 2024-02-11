@@ -8,6 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class PokeSearchComponent {
   
   @Output() public sharedName = new EventEmitter<string>();
+  @Output() public sharedType = new EventEmitter<string>();
+  @Output() public sharedOrder = new EventEmitter<string>();
 
   public typeList: string[] = [
     'Normal', 
@@ -34,5 +36,13 @@ export class PokeSearchComponent {
 
   public getName(inputValue: string) {
     this.sharedName.emit(inputValue);    
+  }
+
+  public getType(type: any) {
+    this.sharedType.emit(type);    
+  }
+
+  public getOrder(order: string) {
+    this.sharedOrder.emit(order);
   }
 }

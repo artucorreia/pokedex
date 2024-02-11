@@ -1,4 +1,8 @@
-<app-poke-search (sharedName)="searchName($event)"></app-poke-search>
+<app-poke-search 
+(sharedName)="searchName($event)" 
+(sharedType)="searchTypes($event)" 
+(sharedOrder)="order($event)">
+</app-poke-search>
 
 <section class="container">
     <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons" *ngIf="!apiError">

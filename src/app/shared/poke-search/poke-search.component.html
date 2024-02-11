@@ -1,14 +1,37 @@
 <form>
+
     <section class="search__container">
         <input type="text" #input (keyup)="getName(input.value)"
-        placeholder="Buscar Pokemon..." maxlength="30">
+        placeholder="Buscar Pokemon..." maxlength="45">
         <img src="assets/search.svg" alt="Buscar Pokemon">
     </section>
 
-    <section>
-        <select name="types" class="select">
-            <option value="">Filtrar</option>
-            <option *ngFor="let type of typeList" [value]="type">{{ type }}</option>
-        </select>
+    <section class="select__container">
+
+        <div class="filter__container">
+            <label>Filtrar:</label>
+            <select name="types" class="select" #selectFilter (change)="getType(selectFilter.value)">
+                <option value="" selected>Todos</option>
+                <optgroup label="Types">
+                    <option *ngFor="let type of typeList" [value]="type">{{ type }}</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="order__container">
+            <label>Ordenar:</label>
+            <select name="order" class="select" #selectOrder (change)="getOrder(selectOrder.value)">
+                <optgroup label="ID">
+                    <option value="" selected>1 a 150</option>
+                    <option value="150-1">150 a 1</option>
+                </optgroup>
+                <optgroup label="Alfabética">
+                    <option value="a-z">A - Z</option>
+                    <option value="z-a">Z - A</option>
+                </optgroup>
+            </select>
+        </div>
+
     </section>
+
 </form>
